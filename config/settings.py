@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -123,3 +124,20 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+JAZZMIN_SETTINGS = {
+    'site_title': 'Your Site Title',
+    'site_header': 'Your Site Header',
+    'welcome_sign': 'Welcome to Your Site',
+    'show_sidebar': True,
+    'navigation_expanded': False,
+    'hide_apps': [],
+    'hide_models': [],
+    'related_modal_active': True,
+    'custom_css': {
+        'theme': 'admin/css/theme-dark.css',  # Path to your custom theme CSS file
+        'extra': 'admin/css/custom.css',  # Path to any additional CSS file
+    },
+    'custom_js': None,
+}
