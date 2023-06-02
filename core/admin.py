@@ -56,20 +56,10 @@ class DiscountAdmin(admin.ModelAdmin):
 
 @admin.register(Navbartex)
 class NavbartexAdmin(admin.ModelAdmin):
-    list_display = ('text', 'display_status')
+    list_display = ('text', 'display_status', 'start_time', 'end_time')
     list_filter = ('status',)
     search_fields = ('text',)
-    readonly_fields = ('created_at', 'updated_at')
 
-    fieldsets = (
-        ('Navbartex Information', {
-            'fields': ('text', 'status')
-        }),
-        ('Timestamps', {
-            'fields': ('created_at', 'updated_at'),
-            'classes': ('collapse',)
-        })
-    )
 
     def display_status(self, obj):
         if obj.status == 'green':

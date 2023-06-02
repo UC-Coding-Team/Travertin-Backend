@@ -1,23 +1,28 @@
-from rest_framework import generics
+from rest_framework import generics,response
+from pytz import timezone
 from core.models.outsite import Navbartex
 from core.serializers.outsite import NavbartexSerializer
 from datetime import datetime, time
 
 
 class NavbartexListCreateView(generics.ListCreateAPIView):
-    queryset = Navbartex.objects.all()
     serializer_class = NavbartexSerializer
+    http_method_names = ['get']
 
-    def get_serializer_context(self):
-        context = super().get_serializer_context()
-        now = datetime.now().time()
-        if time(9, 0) <= now <= time(18, 0):
-            context['tochka_color'] = 'green'
+    def get_queryset(self):
+        current_time = datetime.now(timezone('Asia/Tashkent')).time()
+        # current_time = time(21, 0)
+
+
+        if current_time >= Navbartex.objects.first().start_time and current_time <= Navbartex.objects.first().end_time:
+            queryset = Navbartex.objects.filter(status='green')
         else:
-            context['tochka_color'] = 'red'
-        return context
+            queryset = Navbartex.objects.filter(status='red')
+
+        return queryset
 
 
 class NavbartexRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Navbartex.objects.all()
     serializer_class = NavbartexSerializer
+    http_method_names = ['get']
