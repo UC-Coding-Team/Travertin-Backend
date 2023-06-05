@@ -7,6 +7,7 @@ from core.utils.models import AbstractLayer
 class Product(AbstractLayer):
     name = models.CharField(max_length=250)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
+    description = models.TextField()
     price = models.DecimalField(
         max_digits=12,
         decimal_places=2,

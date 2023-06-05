@@ -14,21 +14,23 @@ SECRET_KEY = 'django-insecure-z51+m&)1qfy=yj2lg-(=pn@gm9uy#x8=jl2i-kr_)8-^8#hdx6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["172.20.16.5","*"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'jazzmin',
-    'drf_yasg',
-    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'corsheaders',
+    'drf_yasg',
+    'rest_framework',
 
     'core',
 ]
@@ -41,6 +43,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'corsheaders.middleware.CorsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -92,6 +97,12 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = (
+  'http://localhost:8000',
+)
 
 
 # Internationalization
