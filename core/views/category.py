@@ -4,11 +4,7 @@ from core.models import Category
 from core.serializers.category import CategorySerializer
 
 
-class CategoryListCreateView(generics.ListCreateAPIView):
+class CategoryListCreateView(generics.ListAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
-
-class CategoryRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Category.objects.all()
-    serializer_class = CategorySerializer
