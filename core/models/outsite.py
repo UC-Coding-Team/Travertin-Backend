@@ -15,3 +15,7 @@ class Navbartex(models.Model):
 
     def __str__(self):
         return self.text
+
+    class Meta:
+        verbose_name = "Навбартекс"
+        verbose_name_plural = "Навбартексты"

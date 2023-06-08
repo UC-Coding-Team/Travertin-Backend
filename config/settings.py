@@ -108,7 +108,12 @@ CORS_ORIGIN_WHITELIST = (
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# LANGUAGES = (
+#     ('ru', u'Russian'),
+#     ('en', _('English')),
+# )
+
+LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'Asia/Tashkent'
 

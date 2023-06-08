@@ -10,3 +10,7 @@ class Discount(AbstractLayer):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = "Скидка"
+        verbose_name_plural = "Скидки"
