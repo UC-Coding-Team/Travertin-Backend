@@ -95,9 +95,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 CORS_ORIGIN_ALLOW_ALL = False
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5174',  # Add the origin of your React app
-]
+# git a
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
