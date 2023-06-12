@@ -42,7 +42,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.common.CommonMiddleware',
-
     'corsheaders.middleware.CorsMiddleware',
 
 ]
@@ -108,8 +107,9 @@ CORS_ALLOW_HEADERS = [
     'x-csrftoken',
     'x-requested-with']
 CORS_ALLOW_METHODS = ['DELETE', 'GET', 'OPTIONS', 'PATCH', 'POST', 'PUT']
+
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost",
+    "http://localhost:5173",
     "http://127.0.0.1",
 ]
 # git a
