@@ -5,18 +5,20 @@ from core.views.outsite import NavbartexListCreateView, NavbartexRetrieveUpdateD
 from core.views.category import CategoryListCreateView
 from core.views.product import (
     ProductRetrieveView,
-    CategoryProductListView
+    CategoryProductListView,
+    ProductListView,
 )
 
 
 app_name = 'core'
 
 urlpatterns = [
-    path('categories/', CategoryListCreateView.as_view(), name='category-list'),
-    path('products/<int:pk>/', ProductRetrieveView.as_view(), name='product-detail'),
-    path('categories/<int:pk>/', CategoryProductListView.as_view(), name='category-product-list'),
-    path('discounts/', DiscountListCreateView.as_view(), name='discount-list-create'),
-    path('discounts/<int:pk>/', DiscountRetrieveUpdateDestroyView.as_view(), name='discount-retrieve-update-destroy'),
-    path('navbartex/', NavbartexListCreateView.as_view(), name='navbartex-list-create'),
-    path('navbartex/<int:pk>/', NavbartexRetrieveUpdateDestroyView.as_view(), name='navbartex-retrieve-update-destroy'),
+    path('categories/', CategoryListCreateView.as_view(), name='category_list'),
+    path('products/<int:pk>/', ProductRetrieveView.as_view(), name='product_detail'),
+    path('products/', ProductListView.as_view(), name='product_list'),
+    path('categories/<int:pk>/', CategoryProductListView.as_view(), name='category_product_list'),
+    path('discounts/', DiscountListCreateView.as_view(), name='discount_list_create'),
+    path('discounts/<int:pk>/', DiscountRetrieveUpdateDestroyView.as_view(), name='discount_retrieve_update_destroy'),
+    path('navbartex/', NavbartexListCreateView.as_view(), name='navbartex_list_create'),
+    path('navbartex/<int:pk>/', NavbartexRetrieveUpdateDestroyView.as_view(), name='navbartex_retrieve_update_destroy'),
 ]

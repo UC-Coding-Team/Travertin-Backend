@@ -22,3 +22,9 @@ class CategoryProductListView(generics.RetrieveAPIView):
         products = Product.objects.filter(category=instance)
         serializer = self.get_serializer(products, many=True)
         return Response(serializer.data)
+
+
+class ProductListView(generics.ListAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+
