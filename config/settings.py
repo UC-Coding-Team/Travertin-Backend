@@ -9,7 +9,7 @@ SECRET_KEY = 'django-insecure-z51+m&)1qfy=yj2lg-(=pn@gm9uy#x8=jl2i-kr_)8-^8#hdx6
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["travertin.pythonanywhere.com"]
 
 INSTALLED_APPS = [
     'jazzmin',
@@ -94,6 +94,7 @@ JAZZMIN_SETTINGS = {
     'custom_js': None,
 }
 
+CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:5174'
