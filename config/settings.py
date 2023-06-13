@@ -1,21 +1,15 @@
+# settings.py
+
 import os
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-z51+m&)1qfy=yj2lg-(=pn@gm9uy#x8=jl2i-kr_)8-^8#hdx6'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
-# Application definition
 
 INSTALLED_APPS = [
     'jazzmin',
@@ -25,11 +19,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'corsheaders',
     'drf_yasg',
     'rest_framework',
-
     'core',
 ]
 
@@ -43,14 +35,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.common.CommonMiddleware',
-
 ]
 
 ROOT_URLCONF = 'config.urls'
+
 CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:5173',  # Add the origin of your React application
+    'http://localhost:5173',  # React uygulamasının kökenini buraya ekleyin
 ]
 
 TEMPLATES = [
@@ -71,9 +63,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -81,74 +70,14 @@ DATABASES = {
     }
 }
 
-# Password validation
-# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
-
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
-]
-
-# CORS_ORIGIN_ALLOW_ALL = True
-#
-# CORS_ALLOW_CREDENTIALS = True
-# CORS_ALLOW_HEADERS = [
-#     'accept',
-#     'accept-encoding',
-#     'authorization',
-#     'content-type',
-#     'origin',
-#     'dnt',
-#     'user-agent',
-#     'x-csrftoken',
-#     'x-requested-with']
-# CORS_ALLOW_METHODS = ['DELETE', 'GET', 'OPTIONS', 'PATCH', 'POST', 'PUT']
-
-
-
-# Internationalization
-# https://docs.djangoproject.com/en/4.2/topics/i18n/
-
-# LANGUAGES = (
-#     ('ru', u'Russian'),
-#     ('en', _('English')),
-# )
-
-LANGUAGE_CODE = 'ru-RU'
-
-TIME_ZONE = 'Asia/Tashkent'
-
-USE_I18N = True
-
-USE_L10N = True
-
-USE_TZ = True
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
+# Diğer ayarlar burada...
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-
 STATIC_ROOT = 'static_file'
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Media settings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
@@ -162,8 +91,8 @@ JAZZMIN_SETTINGS = {
     'hide_models': [],
     'related_modal_active': True,
     'custom_css': {
-        'theme': 'admin/css/theme-dark.css',  # Path to your custom theme CSS file
-        'extra': 'admin/css/custom.css',  # Path to any additional CSS file
+        'theme': 'admin/css/theme-dark.css',
+        'extra': 'admin/css/custom.css',
     },
     'custom_js': None,
 }
